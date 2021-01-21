@@ -9,7 +9,7 @@ def cost(x):
 
 
 def grad(x):
-    return 1/m * (A.T).dot(A.dot(x) - y)
+    return 1/m * np.dot(A.T, A.dot(x)-y)
 
 
 def gradient_descent(x_init, learning_rate, tolerate):
@@ -109,7 +109,7 @@ ln, = ax.plot([], [], color='blue')
 
 
 def update(frame):
-    y0 = x_list[frame][0][0] * x0_gd + x_list[frame][1][0]
+    y0 = x_list[frame][0] * x0_gd + x_list[frame][1]
     ln.set_data(x0_gd, y0)
     return ln,
 
