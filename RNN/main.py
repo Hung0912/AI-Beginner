@@ -92,4 +92,5 @@ train()
 new_text = 'i am very not happy'
 out, _ = rnn.forward(createInputs(new_text))
 probs = softmax(out)
+print('prediction: %.2f' % (np.max(probs)*100) + '%')
 print('true') if np.argmax(probs) == 1 else print('false')

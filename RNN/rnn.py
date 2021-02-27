@@ -33,7 +33,7 @@ class RNN:
 
         return y, h
 
-    def backprop(self, d_y, learn_rate=2e-2):
+    def backprop(self, d_y, learn_rate=0.02):
         '''
         Perform a backward pass of the RNN.
         - d_y (dL/dy) has shape (output_size, 1).
