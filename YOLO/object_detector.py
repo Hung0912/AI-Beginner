@@ -7,7 +7,7 @@ Building object detection base on pretrained model (DarkNet code base on the MSC
 import numpy
 from helpers import *
 from image import *
-from label import *
+from labels import *
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 
@@ -78,13 +78,8 @@ do_nms(boxes, nms_threshold)
 # get the details of the detected objects
 v_boxes, v_labels, v_scores = get_boxes(boxes, labels, class_threshold)
 
-# summarize what we found
-for i in range(len(v_boxes)):
-    print(v_labels[i], v_scores[i])
 
 # Draw all bounding boxes
-
-
 def draw_boxes(file_name, v_boxes, v_labels, v_scores):
     for i, box in enumerate(v_boxes):
         img = plt.imread(file_name)
